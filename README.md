@@ -1,17 +1,17 @@
 # MalbolgeEngineCPP
 
-A standalone Classic Malbolge interpreter/VM implemented in modern C++20,
-with deterministic execution, CLI and embeddable library APIs, differential
-verification against the reference C engine, structured tracing, property
-fuzzing, and benchmarks.
+Interprete/VM standalone de Malbolge Clasico implementado en C++20 moderno,
+con ejecucion determinista, APIs de CLI y libreria embebible, verificacion
+diferencial contra el motor C de referencia, trazado estructurado, fuzzing
+de propiedades, y benchmarks.
 
-It is a behavioral port-and-rewrite of
+Es un port-and-rewrite conductual de
 [DannyBaanks/Malbolge-Engine](https://github.com/DannyBaanks/Malbolge-Engine)
-(MIT) — not a rename: the engine is restructured into a RAII, value-typed,
-header/documented C++ library with a test suite, fuzz harness, and typed
-tracing that the C engine does not have.
+(MIT) — no un renombrado: el motor se reestructuro en una libreria C++
+RAII, de tipos valor, con documentacion en headers, suite de pruebas, harness de fuzz,
+y trazado tipado que el motor C no tiene.
 
-## Quick start
+## Inicio rapido
 
 ```sh
 cmake -S . -B build
@@ -32,70 +32,70 @@ malbolge doctor
 malbolge version
 ```
 
-Exit codes: `0` success (including step-limit timeouts), `1` usage,
-`2` file/program error. Machine-readable output only behind `--json` /
+Exit codes: `0` exito (incluyendo timeouts por limite de pasos), `1` uso,
+`2` error de archivo/programa. Output de maquina-readable solo detras de `--json` /
 `--output`.
 
-## Library
+## Libreria
 
 ```cpp
 #include <malbolge/vm.hpp>
 
 malbolge::VM vm = malbolge::VM::from_source(source);
 vm.set_input(input_bytes);
-auto result = vm.run(1'000'000);   // or vm.step() for single steps
+auto result = vm.run(1'000'000);   // o vm.step() para pasos individuales
 
-result.steps;        // cumulative executed instructions
+result.steps;        // instrucciones ejecutadas acumuladas
 result.reason;       // HALT | INVALID_FETCH | INPUT_EOF | STEP_LIMIT
-vm.output();         // captured output bytes
+vm.output();         // bytes de output acumulados
 ```
 
-The engine never touches the host beyond what you hand it: input is a byte
-buffer, output accumulates in memory, and tracing is an observer interface
-(`malbolge::Tracer`) that cannot mutate state.
+El motor nunca toca el host mas de lo que le entregas: el input es un buffer
+de bytes, el output se acumula en memoria, y el trazado es una interfaz de observador
+(`malbolge::Tracer`) que no puede mutar estado.
 
-## Semantics
+## Semanticas
 
-Frozen in [docs/REFERENCE_BEHAVIOR.md](docs/REFERENCE_BEHAVIOR.md).
-Notable deliberate deviations from textbook Malbolge, inherited from the
-reference engine: input EOF **terminates** the machine; output is capped at
-65536 bytes; memory self-fills lazily in a way that is observably affected
-by writes above the program length.
+Congeladas en [docs/REFERENCE_BEHAVIOR.md](docs/REFERENCE_BEHAVIOR.md).
+Desviaciones deliberadas notables del Malbolge de textbook, heredadas del
+motor de referencia: el input EOF **termina** la maquina; el output esta limitado a
+65536 bytes; la memoria se llena perezosamente de una forma que se ve afectada
+por escrituras arriba de la longitud del programa.
 
-## Verification
+## Verificacion
 
-- **Unit tests**: 6 suites, run via `ctest`.
-- **Differential parity**: `py tools/differential_parity.py` builds the
-  reference C engine and compares byte-exact output, steps and status across
-  a 70-case corpus → `DEMONSTRATED` (see `evidence/parity.json`).
-- **Trace non-interference**: traced and untraced runs are observably
-  identical (test `trace_non_interference`).
-- **Fuzz/properties**: `./build/fuzz_malbolge.exe [seed]` — 5 property
-  families over 20k cases per family; deterministic and seed-reproducible.
-- **Benchmarks**: `py tools/run_benchmarks.py` measures this engine against
-  the reference C engine on the same machine → `bench/results.json`.
+- **Pruebas unitarias**: 6 suites, corren via `ctest`.
+- **Paridad diferencial**: `py tools/differential_parity.py` construye el
+  motor C de referencia y compara output byte-exacto, pasos y status en
+  un corpus de 70 casos → `DEMONSTRATED` (ver `evidence/parity.json`).
+- **No-interferencia de trace**: corridas con trace y sin trace son observablamente
+  identicas (prueba `trace_non_interference`).
+- **Fuzz/propiedades**: `./build/fuzz_malbolge.exe [seed]` — 5 familias de propiedades
+  sobre 20k casos por familia; determinista y reproducible con semilla.
+- **Benchmarks**: `py tools/run_benchmarks.py` mide este motor contra
+  el motor C de referencia en la misma maquina → `bench/results.json`.
 
 ## Layout
 
 ```
-include/malbolge/   public headers (vm, memory, decode, crazy, trace, result)
-src/                library implementation
-cli/                the malbolge CLI
-tests/              unit tests (in-repo mini framework)
-fuzz/               property harness
-bench/              micro-benchmarks (+ reference C driver)
+include/malbolge/   headers publicos (vm, memory, decode, crazy, trace, result)
+src/                implementacion de la libreria
+cli/                el CLI de malbolge
+tests/              pruebas unitarias (mini framework del repo)
+fuzz/               harness de propiedades
+bench/              micro-benchmarks (+ driver C de referencia)
 examples/           hello.malbolge
-docs/               REFERENCE_BEHAVIOR.md (the frozen spec)
-tools/              parity + benchmark drivers
-evidence/           run evidence and verdicts
+docs/               REFERENCE_BEHAVIOR.md (la spec congelada)
+tools/              drivers de paridad + benchmark
+evidence/           evidencia de corrida y veredictos
 ```
 
-## Requirements
+## Requisitos
 
-C++20 compiler (developed with MinGW g++ 16.1), CMake ≥ 3.20. No third-party
-dependencies; the core library is STL-only.
+Compilador C++20 (desarrollado con MinGW g++ 16.1), CMake ≥ 3.20. Sin dependencias
+de terceros; la libreria central es solo STL.
 
-## License / provenance
+## Licencia / procedencia
 
-MIT (see LICENSE). The reference C engine is MIT by the same author.
-Every subsystem is classified in [PROVENANCE.md](PROVENANCE.md).
+MIT (ver LICENSE). El motor C de referencia es MIT del mismo autor.
+Cada subsistema esta clasificado en [PROVENANCE.md](PROVENANCE.md).
