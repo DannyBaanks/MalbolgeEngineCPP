@@ -1,0 +1,7 @@
+﻿{
+    "command":  "ctest --test-dir build --output-on-failure",
+    "suites":  6,
+    "passed":  6,
+    "failed":  0,
+    "date":  "2026-09-03T22:39:56.5357458-06:00"
+}

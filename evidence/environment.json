@@ -1,0 +1,10 @@
+﻿{
+    "date":  "2026-09-03T22:39:34.4762809-06:00",
+    "os":  "Microsoft Windows NT 10.0.26200.0",
+    "arch":  "AMD64",
+    "compiler":  "g++.exe (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r4) 16.1.0",
+    "cmake":  "cmake version 4.4.0",
+    "python":  "Python 3.12.4",
+    "reference_commit":  "e7faeb1bb469e8f21dfb37e9c261bb84b2590b01",
+    "reference_remote":  "https://github.com/DannyBaanks/Malbolge-Engine.git"
+}

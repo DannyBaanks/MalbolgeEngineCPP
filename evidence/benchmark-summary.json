@@ -1,0 +1,24 @@
+{
+  "iterations": 2000000,
+  "cpp": {
+    "iterations": 2000000,
+    "crazy_ns_per_op": 6.3,
+    "rotate_ns_per_op": 1.64,
+    "decode_ns_per_op": 3.97,
+    "vm_hello_ns_per_run": 15089.78,
+    "vm_hello_steps": 48,
+    "sink": 1274
+  },
+  "reference_c": {
+    "iterations": 2000000,
+    "crazy_ns_per_op": 5.96,
+    "vm_hello_ns_per_run": 7908.41,
+    "vm_hello_steps": 48,
+    "sink": 30960
+  },
+  "ratios": {
+    "crazy_c_over_cpp": 0.946,
+    "vm_hello_c_over_cpp": 0.524
+  },
+  "note": "Same machine, same inputs, back to back. ratio > 1 means C++ faster."
+}

@@ -1,0 +1,1415 @@
+{
+  "verdict": {
+    "C_CPP_BEHAVIORAL_PARITY": "DEMONSTRATED"
+  },
+  "cases": 70,
+  "mismatches": 0,
+  "comparisons": [
+    "stdout_bytes",
+    "steps",
+    "terminated",
+    "exit_code"
+  ],
+  "details": [
+    {
+      "name": "hello",
+      "program_sha256": "3f98ae21fc3e1997",
+      "program_len": 88,
+      "input_len": 0,
+      "max_steps": 100000,
+      "ref": {
+        "exit": 0,
+        "stdout": "48656c6c6f2c20776f726c642e0d",
+        "steps": 48,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "48656c6c6f2c20776f726c642e0d",
+        "steps": 48,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "halt_Q",
+      "program_sha256": "4ae81572f06e1b88",
+      "program_len": 1,
+      "input_len": 0,
+      "max_steps": 100000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 1,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 1,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "out_zero_byte",
+      "program_sha256": "2e7d2c03a9507ae2",
+      "program_len": 1,
+      "input_len": 0,
+      "max_steps": 100000,
+      "ref": {
+        "exit": 0,
+        "stdout": "000d",
+        "steps": 2,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "000d",
+        "steps": 2,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "in_eof",
+      "program_sha256": "0bfe935e70c321c7",
+      "program_len": 1,
+      "input_len": 0,
+      "max_steps": 100000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 1,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 1,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "in_a_byte",
+      "program_sha256": "0bfe935e70c321c7",
+      "program_len": 1,
+      "input_len": 1,
+      "max_steps": 100000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 2,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 2,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "in_two_bytes",
+      "program_sha256": "5afab9a620f6f112",
+      "program_len": 2,
+      "input_len": 2,
+      "max_steps": 100000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 3,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 3,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "whitespace_heavy",
+      "program_sha256": "d7b925b1e3b5a14a",
+      "program_len": 8,
+      "input_len": 0,
+      "max_steps": 100000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 1,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 1,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "malformed_control_char",
+      "program_sha256": "1230c10df1763b0c",
+      "program_len": 3,
+      "input_len": 0,
+      "max_steps": 100000,
+      "ref": {
+        "exit": 2,
+        "stdout": "",
+        "steps": null,
+        "terminated": null
+      },
+      "cpp": {
+        "exit": 2,
+        "stdout": "",
+        "steps": null,
+        "terminated": null
+      },
+      "match": true
+    },
+    {
+      "name": "limited_steps",
+      "program_sha256": "3f98ae21fc3e1997",
+      "program_len": 88,
+      "input_len": 0,
+      "max_steps": 10,
+      "ref": {
+        "exit": 0,
+        "stdout": "48656c0d",
+        "steps": 10,
+        "terminated": false
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "48656c0d",
+        "steps": 10,
+        "terminated": false
+      },
+      "match": true
+    },
+    {
+      "name": "jmp_self_loop_bounded",
+      "program_sha256": "3e23e8160039594a",
+      "program_len": 1,
+      "input_len": 0,
+      "max_steps": 4000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 2,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 2,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_000",
+      "program_sha256": "bcf3b7bec28a87de",
+      "program_len": 2385,
+      "input_len": 4,
+      "max_steps": 200000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 185,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 185,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_001",
+      "program_sha256": "19c23048b9ccaa09",
+      "program_len": 161,
+      "input_len": 5,
+      "max_steps": 20000,
+      "ref": {
+        "exit": 0,
+        "stdout": "580d",
+        "steps": 22,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "580d",
+        "steps": 22,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_002",
+      "program_sha256": "552544e7d725e44c",
+      "program_len": 245,
+      "input_len": 5,
+      "max_steps": 20000,
+      "ref": {
+        "exit": 0,
+        "stdout": "570d",
+        "steps": 64,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "570d",
+        "steps": 64,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_003",
+      "program_sha256": "ca5e8c335d1615d0",
+      "program_len": 53,
+      "input_len": 12,
+      "max_steps": 200000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 54,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 54,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_004",
+      "program_sha256": "a03432f630fc0ba9",
+      "program_len": 95,
+      "input_len": 11,
+      "max_steps": 20000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 96,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 96,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_005",
+      "program_sha256": "6ec2930faa70d1c2",
+      "program_len": 38,
+      "input_len": 11,
+      "max_steps": 20000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 39,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 39,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_006",
+      "program_sha256": "caa04a7604984aa8",
+      "program_len": 38,
+      "input_len": 8,
+      "max_steps": 200000,
+      "ref": {
+        "exit": 0,
+        "stdout": "720d",
+        "steps": 39,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "720d",
+        "steps": 39,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_007",
+      "program_sha256": "2e7afeb925c00a70",
+      "program_len": 37,
+      "input_len": 6,
+      "max_steps": 20000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 38,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 38,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_008",
+      "program_sha256": "45e1b55d7d41b952",
+      "program_len": 239,
+      "input_len": 13,
+      "max_steps": 20000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 73,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 73,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_009",
+      "program_sha256": "13f661ed4a8bfeb0",
+      "program_len": 400,
+      "input_len": 5,
+      "max_steps": 200000,
+      "ref": {
+        "exit": 0,
+        "stdout": "000d",
+        "steps": 48,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "000d",
+        "steps": 48,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_010",
+      "program_sha256": "171c04d4c424e167",
+      "program_len": 247,
+      "input_len": 1,
+      "max_steps": 20000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 5,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 5,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_011",
+      "program_sha256": "da1e137526bab4df",
+      "program_len": 17,
+      "input_len": 0,
+      "max_steps": 20000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 12,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 12,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_012",
+      "program_sha256": "df0605ca3256ef3d",
+      "program_len": 189,
+      "input_len": 0,
+      "max_steps": 200000,
+      "ref": {
+        "exit": 0,
+        "stdout": "ef760d",
+        "steps": 156,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "ef760d",
+        "steps": 156,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_013",
+      "program_sha256": "45adda325b9c2605",
+      "program_len": 181,
+      "input_len": 1,
+      "max_steps": 20000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 100,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 100,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_014",
+      "program_sha256": "fb584d8fb9c53a60",
+      "program_len": 47,
+      "input_len": 8,
+      "max_steps": 20000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 36,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 36,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_015",
+      "program_sha256": "4e8d83b7ecda61cd",
+      "program_len": 218,
+      "input_len": 10,
+      "max_steps": 200000,
+      "ref": {
+        "exit": 0,
+        "stdout": "4b110d",
+        "steps": 44,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "4b110d",
+        "steps": 44,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_016",
+      "program_sha256": "49e14eb5ee23e63e",
+      "program_len": 244,
+      "input_len": 4,
+      "max_steps": 20000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 73,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 73,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_017",
+      "program_sha256": "0c1c094679a0c2a3",
+      "program_len": 27,
+      "input_len": 11,
+      "max_steps": 20000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 28,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 28,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_018",
+      "program_sha256": "7c94910a7d0642e7",
+      "program_len": 934,
+      "input_len": 0,
+      "max_steps": 200000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 16,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 16,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_019",
+      "program_sha256": "ab0fd0d41b6ed58f",
+      "program_len": 171,
+      "input_len": 8,
+      "max_steps": 20000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 3,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 3,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_020",
+      "program_sha256": "6bcd900d41957e19",
+      "program_len": 320,
+      "input_len": 6,
+      "max_steps": 20000,
+      "ref": {
+        "exit": 0,
+        "stdout": "490d",
+        "steps": 67,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "490d",
+        "steps": 67,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_021",
+      "program_sha256": "f97abb32e758c248",
+      "program_len": 380,
+      "input_len": 1,
+      "max_steps": 200000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 14,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 14,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_022",
+      "program_sha256": "206188a14a6e60ba",
+      "program_len": 304,
+      "input_len": 2,
+      "max_steps": 20000,
+      "ref": {
+        "exit": 0,
+        "stdout": "67770d",
+        "steps": 227,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "67770d",
+        "steps": 227,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_023",
+      "program_sha256": "45cae5868506f778",
+      "program_len": 389,
+      "input_len": 10,
+      "max_steps": 20000,
+      "ref": {
+        "exit": 0,
+        "stdout": "370d",
+        "steps": 118,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "370d",
+        "steps": 118,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_024",
+      "program_sha256": "ba6996c72eb76844",
+      "program_len": 2490,
+      "input_len": 5,
+      "max_steps": 200000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 31,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 31,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_025",
+      "program_sha256": "ea8ab95702c01121",
+      "program_len": 21,
+      "input_len": 1,
+      "max_steps": 20000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 22,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 22,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_026",
+      "program_sha256": "58a08a1011cdfb3e",
+      "program_len": 243,
+      "input_len": 0,
+      "max_steps": 20000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 61,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 61,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_027",
+      "program_sha256": "1692f080d10a9440",
+      "program_len": 33,
+      "input_len": 0,
+      "max_steps": 200000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 3,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 3,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_028",
+      "program_sha256": "3ee10c44f303dd38",
+      "program_len": 142,
+      "input_len": 4,
+      "max_steps": 20000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 10,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 10,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_029",
+      "program_sha256": "8646ed58c9ea1528",
+      "program_len": 364,
+      "input_len": 10,
+      "max_steps": 20000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 52,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 52,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_030",
+      "program_sha256": "2d06a6333811cd83",
+      "program_len": 185,
+      "input_len": 15,
+      "max_steps": 200000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 2,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 2,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_031",
+      "program_sha256": "05f5810fbd07e38e",
+      "program_len": 374,
+      "input_len": 8,
+      "max_steps": 20000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 122,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 122,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_032",
+      "program_sha256": "4d731fc13c50bf6d",
+      "program_len": 389,
+      "input_len": 1,
+      "max_steps": 20000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 5,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 5,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_033",
+      "program_sha256": "4eba1ba90f1accb5",
+      "program_len": 182,
+      "input_len": 14,
+      "max_steps": 200000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 75,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 75,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_034",
+      "program_sha256": "36222b18ab02a864",
+      "program_len": 333,
+      "input_len": 11,
+      "max_steps": 20000,
+      "ref": {
+        "exit": 0,
+        "stdout": "000d",
+        "steps": 75,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "000d",
+        "steps": 75,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_035",
+      "program_sha256": "4d3ac17fecf1a417",
+      "program_len": 12,
+      "input_len": 5,
+      "max_steps": 20000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 13,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 13,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_036",
+      "program_sha256": "9a57eb1d5986e3c6",
+      "program_len": 2884,
+      "input_len": 11,
+      "max_steps": 200000,
+      "ref": {
+        "exit": 0,
+        "stdout": "7b0d",
+        "steps": 57,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "7b0d",
+        "steps": 57,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_037",
+      "program_sha256": "7075151fd1e92f18",
+      "program_len": 170,
+      "input_len": 15,
+      "max_steps": 20000,
+      "ref": {
+        "exit": 0,
+        "stdout": "d2d20d",
+        "steps": 111,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "d2d20d",
+        "steps": 111,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_038",
+      "program_sha256": "e9910f339ecfca07",
+      "program_len": 36,
+      "input_len": 1,
+      "max_steps": 20000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 26,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 26,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_039",
+      "program_sha256": "936ba02144aba544",
+      "program_len": 244,
+      "input_len": 15,
+      "max_steps": 200000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 9,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 9,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_040",
+      "program_sha256": "67bea0bc2ef0b9d0",
+      "program_len": 157,
+      "input_len": 2,
+      "max_steps": 20000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 53,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 53,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_041",
+      "program_sha256": "e7fe9a7c79b3bb58",
+      "program_len": 387,
+      "input_len": 5,
+      "max_steps": 20000,
+      "ref": {
+        "exit": 0,
+        "stdout": "ee1058580d",
+        "steps": 270,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "ee1058580d",
+        "steps": 270,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_042",
+      "program_sha256": "e3cd07168462d321",
+      "program_len": 2066,
+      "input_len": 14,
+      "max_steps": 200000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 160,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 160,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_043",
+      "program_sha256": "c7a519b79aa86fc9",
+      "program_len": 91,
+      "input_len": 2,
+      "max_steps": 20000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 22,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 22,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_044",
+      "program_sha256": "ef28506f19a0c13c",
+      "program_len": 149,
+      "input_len": 2,
+      "max_steps": 20000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 2,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 2,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_045",
+      "program_sha256": "a7710ab181151b14",
+      "program_len": 380,
+      "input_len": 5,
+      "max_steps": 200000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 10,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 10,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_046",
+      "program_sha256": "3f484d9ec8b611b5",
+      "program_len": 391,
+      "input_len": 3,
+      "max_steps": 20000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0056562a0d",
+        "steps": 296,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0056562a0d",
+        "steps": 296,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_047",
+      "program_sha256": "d3aa6e4208650e43",
+      "program_len": 24,
+      "input_len": 1,
+      "max_steps": 20000,
+      "ref": {
+        "exit": 0,
+        "stdout": "000d",
+        "steps": 25,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "000d",
+        "steps": 25,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_048",
+      "program_sha256": "17d8f8708c0a5f6e",
+      "program_len": 2740,
+      "input_len": 0,
+      "max_steps": 200000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 39,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 39,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_049",
+      "program_sha256": "07f55e58155ec2d8",
+      "program_len": 162,
+      "input_len": 3,
+      "max_steps": 20000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 62,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 62,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_050",
+      "program_sha256": "4f90328e6cd34a1e",
+      "program_len": 217,
+      "input_len": 11,
+      "max_steps": 20000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 77,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 77,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_051",
+      "program_sha256": "288305937b60e9fa",
+      "program_len": 150,
+      "input_len": 0,
+      "max_steps": 200000,
+      "ref": {
+        "exit": 0,
+        "stdout": "700d",
+        "steps": 136,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "700d",
+        "steps": 136,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_052",
+      "program_sha256": "6cc96e5c79582172",
+      "program_len": 390,
+      "input_len": 12,
+      "max_steps": 20000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 100,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 100,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_053",
+      "program_sha256": "7137855e03b2cdd9",
+      "program_len": 204,
+      "input_len": 11,
+      "max_steps": 20000,
+      "ref": {
+        "exit": 0,
+        "stdout": "000d",
+        "steps": 14,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "000d",
+        "steps": 14,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_054",
+      "program_sha256": "88278d373ffcf9a5",
+      "program_len": 229,
+      "input_len": 6,
+      "max_steps": 200000,
+      "ref": {
+        "exit": 0,
+        "stdout": "000d",
+        "steps": 65,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "000d",
+        "steps": 65,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_055",
+      "program_sha256": "2ab737854aba3fdf",
+      "program_len": 247,
+      "input_len": 13,
+      "max_steps": 20000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 140,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 140,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_056",
+      "program_sha256": "7d3a660a8fb0a7e5",
+      "program_len": 376,
+      "input_len": 12,
+      "max_steps": 20000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 21,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 21,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_057",
+      "program_sha256": "8aa4ca3c246a0622",
+      "program_len": 94,
+      "input_len": 3,
+      "max_steps": 200000,
+      "ref": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 26,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "0d",
+        "steps": 26,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_058",
+      "program_sha256": "3004735531d1402f",
+      "program_len": 248,
+      "input_len": 12,
+      "max_steps": 20000,
+      "ref": {
+        "exit": 0,
+        "stdout": "680d",
+        "steps": 179,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "680d",
+        "steps": 179,
+        "terminated": true
+      },
+      "match": true
+    },
+    {
+      "name": "random_059",
+      "program_sha256": "6a0ea0aa90909681",
+      "program_len": 82,
+      "input_len": 7,
+      "max_steps": 20000,
+      "ref": {
+        "exit": 0,
+        "stdout": "490d",
+        "steps": 94,
+        "terminated": true
+      },
+      "cpp": {
+        "exit": 0,
+        "stdout": "490d",
+        "steps": 94,
+        "terminated": true
+      },
+      "match": true
+    }
+  ]
+}
