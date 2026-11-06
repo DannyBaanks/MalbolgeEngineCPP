@@ -1,9 +1,15 @@
-# MalbolgeEngineCPP
+# MalbolgeEngineCPP v2.0 — VM Standalone en C++20 con Trazado Estructurado y Fuzzing
 
-Interprete/VM standalone de Malbolge Clasico implementado en C++20 moderno,
-con ejecucion determinista, APIs de CLI y libreria embebible, verificacion
-diferencial contra el motor C de referencia, trazado estructurado, fuzzing
-de propiedades, y benchmarks.
+[![Version](https://img.shields.io/badge/version-2.0-blue.svg)](https://github.com/DannyBaanks/MalbolgeEngineCPP)
+[![C++](https://img.shields.io/badge/C%2B%2B-20-00599C.svg)](https://en.wikipedia.org/wiki/C%2B%2B20)
+[![Tests](https://img.shields.io/badge/ctests-6%2F6%20PASS-brightgreen.svg)]()
+
+Intérprete/VM standalone de Malbolge Clásico implementado en C++20 moderno,
+con ejecución determinista, APIs de CLI y librería embebible RAII, verificación
+diferencial contra el motor C de referencia, trazado estructurado JSONL, fuzzing
+de propiedades y suite CTest nativa.
+
+Parte de la **Flota de Consenso Multi-Oráculo v2.0** del ecosistema Malbolge de ISyCo.
 
 Es un port-and-rewrite conductual de
 [DannyBaanks/Malbolge-Engine](https://github.com/DannyBaanks/Malbolge-Engine)
